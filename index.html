@@ -5,51 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
-    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
 
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body>
-    <!-- Sign-up form start -->
+    <main>
+      <!-- Sign-up Form Section -->
+      <div class="container-main" id="signup-form-container">
+        <picture class="img">
+          <source
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+            media="(min-width:992px)"
+          />
+          <img
+            src="./assets/images/illustration-sign-up-mobile.svg"
+            alt="Sign up illustration"
+          />
+        </picture>
+        <div class="contents">
+          <div class="description">
+            <h1>Stay updated!</h1>
+            <p>Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="feature-list">
+              <li class="feature-item">
+                Product discovery and building what matters
+              </li>
+              <li class="feature-item">
+                Measuring to ensure updates are a success
+              </li>
+              <li class="feature-item">And much more!</li>
+            </ul>
+          </div>
+          <form id="newsletter-form" novalidate>
+            <div class="form-group">
+              <div class="label-wrapper">
+                <label for="email">Email address</label>
+                <span class="error-message" id="email-error"></span>
+              </div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@company.com"
+                required
+                aria-required="true"
+                aria-describedby="email-error"
+              />
+            </div>
+            <button type="submit" class="submit-btn">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </div>
+      </div>
 
-    Stay updated! Join 60,000+ product managers receiving monthly updates on:
-    Product discovery and building what matters Measuring to ensure updates are
-    a success And much more! Email address email@company.com Subscribe to
-    monthly newsletter
-
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-
-    Thanks for subscribing! A confirmation email has been sent to
-    ash@loremcompany.com. Please open it and click the button inside to confirm
-    your subscription. Dismiss message
-
-    <!-- Success message end -->
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+      <!-- Success Message Section -->
+      <div
+        class="container-success"
+        id="success-message"
+        aria-hidden="true"
+        hidden
+      >
+        <div class="success-content">
+          <img
+            src="./assets/images/icon-success.svg"
+            alt="success-icon"
+            class="success-icon"
+          />
+          <h1>Thanks for subscribing!</h1>
+          <p>
+            A confirmation email has been sent to
+            <span id="confirmed-email"></span>. Please open it and click the
+            button inside to confirm your subscription.
+          </p>
+          <button type="button" id="dismiss-btn" class="dismiss-btn">
+            Dismiss message
+          </button>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
