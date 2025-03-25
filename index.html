@@ -4,7 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
 
@@ -14,12 +19,11 @@
   </head>
   <body>
     <main>
-      <!-- Sign-up Form Section -->
       <div class="container-main" id="signup-form-container">
         <picture class="img">
           <source
             srcset="./assets/images/illustration-sign-up-desktop.svg"
-            media="(min-width:992px)"
+            media="(min-width:768px)"
           />
           <img
             src="./assets/images/illustration-sign-up-mobile.svg"
@@ -44,7 +48,9 @@
             <div class="form-group">
               <div class="label-wrapper">
                 <label for="email">Email address</label>
-                <span class="error-message" id="email-error"></span>
+                <span class="error-message" id="email-error" hidden
+                  >Valid email required</span
+                >
               </div>
               <input
                 type="email"
@@ -54,6 +60,7 @@
                 required
                 aria-required="true"
                 aria-describedby="email-error"
+                class=""
               />
             </div>
             <button type="submit" class="submit-btn">
@@ -64,12 +71,7 @@
       </div>
 
       <!-- Success Message Section -->
-      <div
-        class="container-success"
-        id="success-message"
-        aria-hidden="true"
-        hidden
-      >
+      <div class="container-success" id="success-message" aria-hidden="true">
         <div class="success-content">
           <img
             src="./assets/images/icon-success.svg"
