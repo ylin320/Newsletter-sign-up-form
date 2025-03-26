@@ -60,7 +60,7 @@ img {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   color: var(--blue-800);
 }
@@ -93,6 +93,7 @@ p {
 }
 
 .label-wrapper {
+  font-size: 0.9rem;
   display: flex;
   justify-content: space-between;
 
